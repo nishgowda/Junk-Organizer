@@ -1,7 +1,7 @@
 
 import os 
 from pathlib import Path 
-  
+  ## Stores the types of files available for the organizer to organize
 DIRECTORIES = { 
     "HTML": [".html5", ".html", ".htm", ".xhtml"], 
     "IMAGES": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg", 
@@ -11,7 +11,7 @@ DIRECTORIES = {
     "DOCUMENTS": [".oxps", ".epub", ".pages", ".docx", ".doc", ".fdf", ".ods", 
                   ".odt", ".pwi", ".xsn", ".xps", ".dotx", ".docm", ".dox", 
                   ".rvg", ".rtf", ".rtfd", ".wpd", ".xls", ".xlsx", ".ppt", 
-                  "pptx"], 
+                  ".pptx",".json"], 
     "ARCHIVES": [".a", ".ar", ".cpio", ".iso", ".tar", ".gz", ".rz", ".7z", 
                  ".dmg", ".rar", ".xar", ".zip"], 
     "AUDIO": [".aac", ".aa", ".aac", ".dvf", ".m4a", ".m4b", ".m4p", ".mp3", 
@@ -24,11 +24,13 @@ DIRECTORIES = {
     "SHELL": [".sh"] 
   
 } 
-  
+
+## Sets the path to wherever the directory of the organizejunk.py file currently is
 FILE_FORMATS = {file_format: directory 
                 for directory, file_formats in DIRECTORIES.items() 
                 for file_format in file_formats} 
-  
+
+## Groups the files from the directory into dolders based on where the path is set to.
 def organize_junk(): 
     for entry in os.scandir(): 
         if entry.is_dir(): 
