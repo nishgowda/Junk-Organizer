@@ -1,7 +1,7 @@
 
 import os 
 from pathlib import Path 
-  ## Stores the types of files available for the organizer to organize
+  ## creats directory for the types of files available for the organizer to organize
 DIRECTORIES = { 
     "HTML": [".html5", ".html", ".htm", ".xhtml"], 
     "IMAGES": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg", 
